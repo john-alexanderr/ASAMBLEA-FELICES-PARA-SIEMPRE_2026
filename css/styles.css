@@ -10869,12 +10869,12 @@ textarea.form-control-lg {
 }
 
 .hero-image-layer.layer-1 {
-  z-index: 0;
+  z-index: 1;
   background: var(--dark-bg);
 }
 
 .hero-image-layer.layer-2 {
-  z-index: 1;
+  z-index: 0;
 }
 
 .hero-overlay {
@@ -10946,56 +10946,15 @@ textarea.form-control-lg {
   }
 }
 
-/* === HERO MOBILE: sin recorte, imágenes completas === */
+/* === HERO MOBILE: GSAP activo, imágenes sin recorte excesivo === */
 @media (max-width: 576px) {
   #hero-reveal {
-    height: auto;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .hero-image-layer {
-    position: absolute;
-    background: var(--dark-bg);
+    height: 120vh;
   }
 
   .hero-image-layer img {
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
-  }
-
-  .hero-image-layer.layer-1 {
-    position: relative;
-    flex: 1;
-    min-height: 60vh;
-  }
-
-  .hero-image-layer.layer-2 {
-    display: none;
-  }
-
-  .hero-overlay {
-    position: absolute;
-  }
-
-  .hero-content {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    padding: 5rem 1rem 2rem;
-    width: 100%;
-    max-width: 100%;
-    pointer-events: auto;
-  }
-
-  .scroll-indicator {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    transform: none;
-    padding: 1rem 0 2rem;
   }
 }
 
@@ -11320,14 +11279,12 @@ footer.footer h6 {
   .navbar-toggler:focus { box-shadow: none; }
   .navbar-toggler-icon { width: 1.2em; height: 1.2em; }
 
-  #hero-reveal { min-height: 100vh; }
-  .hero-content { width: 100%; }
-  .hero-content .hero-title { font-size: 2rem; line-height: 1.15; }
+  .hero-content .hero-title { font-size: 1.8rem; line-height: 1.15; }
   .hero-content .hero-title-accent { display: inline; }
-  .hero-content .hero-subtitle { font-size: 0.9rem; margin-top: 0.75rem; }
+  .hero-content .hero-subtitle { font-size: 0.85rem; margin-top: 0.75rem; }
 
-  .scroll-indicator { padding: 1rem 0 2.5rem; }
-  .mouse { width: 22px; height: 34px; border-width: 1.5px; }
+  .scroll-indicator { bottom: 0.75rem; }
+  .mouse { width: 20px; height: 30px; border-width: 1.5px; }
   .wheel { width: 3px; height: 6px; top: 6px; }
 
   .badge { font-size: 0.7rem; }

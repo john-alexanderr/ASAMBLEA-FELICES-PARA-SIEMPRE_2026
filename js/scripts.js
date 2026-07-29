@@ -3,21 +3,25 @@ document.body.classList.add('loaded');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const isMobile = window.innerWidth < 768;
 
-if (!prefersReducedMotion && !isMobile) {
+if (!prefersReducedMotion) {
   gsap.registerPlugin(ScrollTrigger);
 
   const heroReveal = document.getElementById('hero-reveal');
   if (heroReveal) {
+    const scaleEnd = isMobile ? 1.15 : 1.4;
+    const blurEnd = isMobile ? '6px' : '12px';
+    const yEnd = isMobile ? -40 : -80;
+
     gsap.to('.layer-1 img', {
       scrollTrigger: {
         trigger: '#hero-reveal',
         start: 'top top',
         end: 'bottom center',
-        scrub: 1.2,
+        scrub: isMobile ? 0.6 : 1.2,
       },
-      scale: 1.4,
+      scale: scaleEnd,
       opacity: 0,
-      filter: 'blur(12px)',
+      filter: `blur(${blurEnd})`,
       ease: 'power2.inOut',
     });
 
@@ -26,7 +30,7 @@ if (!prefersReducedMotion && !isMobile) {
         trigger: '#hero-reveal',
         start: 'top top',
         end: 'bottom center',
-        scrub: 1.2,
+        scrub: isMobile ? 0.6 : 1.2,
       },
       scale: 1,
       opacity: 1,
@@ -39,10 +43,10 @@ if (!prefersReducedMotion && !isMobile) {
         trigger: '#hero-reveal',
         start: 'top top',
         end: 'bottom center',
-        scrub: 1.2,
+        scrub: isMobile ? 0.6 : 1.2,
       },
       opacity: 0,
-      y: -80,
+      y: yEnd,
       ease: 'power2.inOut',
     });
 
