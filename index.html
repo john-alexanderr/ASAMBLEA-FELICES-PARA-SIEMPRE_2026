@@ -5,12 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="Página de información sobre la asamblea anual" />
     <meta name="author" content="Asamblea 2026" />
+    <meta name="theme-color" content="#0a0f1a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <title>Asamblea 2026 — Felices para siempre</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
+    <style>
+      body { opacity: 0; transition: opacity 0.3s ease; }
+      body.loaded { opacity: 1; }
+    </style>
 </head>
 <body>
 
@@ -36,10 +43,10 @@
     <!-- Hero Cinematic Zoom -->
     <section id="hero-reveal">
         <div class="hero-image-layer layer-2">
-            <img src="assets/img/imagen 2.png" alt="Asamblea 2026" />
+            <img src="assets/img/imagen 2.png" alt="Asamblea 2026" loading="lazy" />
         </div>
         <div class="hero-image-layer layer-1">
-            <img src="assets/img/imagen 1.png" alt="Asamblea 2026" />
+            <img src="assets/img/imagen%20principal%20.png" alt="Asamblea 2026" loading="lazy" />
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
