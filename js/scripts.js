@@ -3,7 +3,7 @@ document.body.classList.add('loaded');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const isMobile = window.innerWidth < 768;
 
-if (!prefersReducedMotion) {
+if (!prefersReducedMotion && !isMobile) {
   gsap.registerPlugin(ScrollTrigger);
 
   const heroReveal = document.getElementById('hero-reveal');
@@ -13,9 +13,9 @@ if (!prefersReducedMotion) {
         trigger: '#hero-reveal',
         start: 'top top',
         end: 'bottom center',
-        scrub: isMobile ? 0.8 : 1.2,
+        scrub: 1.2,
       },
-      scale: isMobile ? 1.2 : 1.4,
+      scale: 1.4,
       opacity: 0,
       filter: 'blur(12px)',
       ease: 'power2.inOut',
@@ -26,7 +26,7 @@ if (!prefersReducedMotion) {
         trigger: '#hero-reveal',
         start: 'top top',
         end: 'bottom center',
-        scrub: isMobile ? 0.8 : 1.2,
+        scrub: 1.2,
       },
       scale: 1,
       opacity: 1,
@@ -39,10 +39,10 @@ if (!prefersReducedMotion) {
         trigger: '#hero-reveal',
         start: 'top top',
         end: 'bottom center',
-        scrub: isMobile ? 0.8 : 1.2,
+        scrub: 1.2,
       },
       opacity: 0,
-      y: isMobile ? -40 : -80,
+      y: -80,
       ease: 'power2.inOut',
     });
 
